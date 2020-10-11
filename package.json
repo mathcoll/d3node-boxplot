@@ -1,0 +1,23 @@
+{
+  "name": "d3node-boxplot",
+  "version": "0.0.1",
+  "description": "D3-Node example - Boxplot",
+  "author": {
+    "name": "Mathieu Lory",
+    "email": "mathieu@internetcollaboratif.info"
+  },
+  "funding": {
+    "url": "https://github.com/sponsors/mathcoll"
+  },
+  "keywords": [
+    "d3",
+    "cli",
+    "node"
+  ],
+  "contributors": [],
+  "license": "MIT",
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/mathcoll/d3node-boxplot/issues"
+  }
+}
