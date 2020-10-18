@@ -1,23 +1,63 @@
 {
-  "name": "d3node-boxplot",
-  "version": "0.0.1",
-  "description": "D3-Node example - Boxplot",
+  "_from": "d3node-boxplot@0.0.2",
+  "_id": "d3node-boxplot@0.0.2",
+  "_inBundle": false,
+  "_integrity": "sha512-PsVX81NIHrsNr6Owfg1PabhuBwHpAnEGzB07CPxYsoIx6BSjxQ43iXqQ+Lpt5ZRx6esQxd2qjUL3/9snwXSGRQ==",
+  "_location": "/d3node-boxplot",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "d3node-boxplot@0.0.1",
+    "name": "d3node-boxplot",
+    "escapedName": "d3node-boxplot",
+    "rawSpec": "0.0.1",
+    "saveSpec": null,
+    "fetchSpec": "0.0.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/d3node-boxplot/-/d3node-boxplot-0.0.1.tgz",
+  "_shasum": "d4bf857dca7c90abe981abf361fb493c919c2219",
+  "_spec": "d3node-boxplot@0.0.1",
+  "_where": "/media/Documents/Projets/2019/internetcollaboratif.info/t6",
   "author": {
     "name": "Mathieu Lory",
     "email": "mathieu@internetcollaboratif.info"
   },
+  "bugs": {
+    "url": "https://github.com/mathcoll/d3node-boxplot/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [],
+  "dependencies": {},
+  "deprecated": false,
+  "description": "D3-Node example - Boxplot",
+  "devDependencies": {},
+  "directories": {
+    "example": "examples"
+  },
   "funding": {
     "url": "https://github.com/sponsors/mathcoll"
   },
+  "homepage": "https://github.com/mathcoll/d3node-boxplot#readme",
   "keywords": [
     "d3",
     "cli",
     "node"
   ],
-  "contributors": [],
   "license": "MIT",
+  "main": "index.js",
+  "name": "d3node-boxplot",
   "private": false,
-  "bugs": {
-    "url": "https://github.com/mathcoll/d3node-boxplot/issues"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathcoll/d3node-boxplot.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.1"
 }

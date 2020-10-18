@@ -36,12 +36,13 @@ function boxplot({
   const g = svg.append('g');
 
   const { allKeys } = data;
-
-  // Compute summary statistics used for the box:
-  const data_sorted = data.sort(d3.ascending);
-  const q1 = d3.quantile(data_sorted, .25);
-  const median = d3.quantile(data_sorted, .5);
-  const q3 = d3.quantile(data_sorted, .75);
+  if (!data.q1 && !data.q3 && !data.median) {
+		// Compute summary statistics used for the box:
+		const data_sorted = data.sort(d3.ascending);
+  }
+  const q1 = typeof data.q1!=="undefined"?data.q1:d3.quantile(data_sorted, .25);
+  const median = typeof data.median!=="undefined"?data.median:d3.quantile(data_sorted, .5);
+  const q3 = typeof data.q3!=="undefined"?data.q3:d3.quantile(data_sorted, .75);
   const interQuantileRange = q3 - q1;
   const min = q1 - 1.5 * interQuantileRange;
   const max = q1 + 1.5 * interQuantileRange;
@@ -51,17 +52,23 @@ function boxplot({
   const bxwidth = width/4;
 
   // Show the Y scale
-  var y = d3.scaleLinear()
-    .domain(allKeys ? d3.extent(allKeys) : d3.extent(data, d => d))
-    .range([height, 0]);
-  g.call(d3.axisLeft(y));
+  if (!data.q1 && !data.q3 && !data.median && !data.min && !data.max) {
+		var y = d3.scaleLinear()
+		  .domain(allKeys ? d3.extent(allKeys) : d3.extent(data, d => d))
+		  .range([height, 0]);
+  } else {
+		var y = d3.scaleLinear()
+		  .domain([data.min, data.max])
+		  .range([height, 0]);
+  }
+	g.call(d3.axisLeft(y));
 
   // Show the main vertical line
   g.append("line")
     .attr("x1", bxcenter)
     .attr("x2", bxcenter)
-    .attr("y1", y(min) )
-    .attr("y2", y(max) )
+    .attr("y1", y(data.min) )
+    .attr("y2", y(data.max) )
     .attr("stroke", "black");
 
   // text label for the x Axis
@@ -81,7 +88,7 @@ function boxplot({
 
   // show median, min and max horizontal lines
   g.selectAll("toto")
-  .data([min, median, max])
+  .data([data.min, data.median, data.max])
   .enter()
   .append("line")
     .attr("x1", bxcenter-bxwidth/2)
